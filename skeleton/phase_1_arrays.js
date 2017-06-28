@@ -11,4 +11,18 @@ Array.prototype.uniq = function() {
   return result
 }
 
-// #2 
+// #2: twoSum
+
+Array.prototype.twoSum = function() {
+  let arr = this;
+  const result = []
+  for (i = 0; i < arr.length; i++) {
+    for (j = 0; j < arr.length; j++) {
+      if (i === j || i > j ) {continue;
+      } else if (arr[i] + arr[j] === 0) {
+        result.push( [i, j] )
+      }
+    }
+  }
+  return result
+}
