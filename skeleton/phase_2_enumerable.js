@@ -21,3 +21,19 @@ function plusTwo(num) { (num + 2) }
 const arr = [1, 2, 3, 4]
 
 arr.myMap(plusTwo)
+
+// #3 my reduce
+
+Array.prototype.myReduce = function (callback, [initialValue]) {
+  var acc = 0
+  let arr = this
+
+  if (!initialValue) {
+    acc = arr[0];
+    arr = arr.slice(1);
+    } else { acc = initialValue }
+
+  for ( let i = 0; i < arr.length; i++) {
+    acc = callback(acc, arr[i])
+  }
+}
