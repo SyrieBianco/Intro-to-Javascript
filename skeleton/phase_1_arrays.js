@@ -1,7 +1,7 @@
 // #1: uniq
 
 Array.prototype.uniq = function() {
-  var result = [];
+  const result = [];
   var arr = this;
   for (var i = 0; i < arr.length; i++) {
     if (!result.includes(arr[i])) {
