@@ -25,7 +25,7 @@ arr.myMap(plusTwo)
 // #3 my reduce
 
 Array.prototype.myReduce = function (callback, [initialValue]) {
-  var acc = 0
+  let acc = 0
   let arr = this
 
   if (!initialValue) {
@@ -36,4 +36,5 @@ Array.prototype.myReduce = function (callback, [initialValue]) {
   for ( let i = 0; i < arr.length; i++) {
     acc = callback(acc, arr[i])
   }
+  return acc
 }
