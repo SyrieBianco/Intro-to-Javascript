@@ -66,3 +66,79 @@ function fibonacci(n) {
 }
 
 fibonacci(9)
+
+// # 6 binary search
+// REVISIT THIS PLZ!! //
+
+
+function bsearch(arr, target) {
+  if (arr.length === 0) {
+    return -1;
+    }
+
+  let midIdx = Math.floor(arr.length / 2);
+  let middle = arr[midIdx];
+
+  if (middle === target) {
+    return midIdx;
+  } else if (middle > target) {
+    let left = arr.slice(0, midIdx);
+    return bsearch(left, target);
+  } else {
+    let right = arr.slice(midIdx + 1);
+    subIndex = bsearch(right, target);
+    return subIndex === -1 ? -1 : midIdx + subIndex + 1;
+  }
+
+}
+
+const array = [1, 2, 3, 4, 5, 6, 7]
+console.log(bsearch(array, 1))
+console.log(bsearch(array, 2))
+console.log(bsearch(array, 3))
+console.log(bsearch(array, 4))
+console.log(bsearch(array, 5))
+console.log(bsearch(array, 6))
+console.log(bsearch(array, 7))
+console.log(bsearch(array, 8))
+
+
+// #7 mergesort
+// WHY ISNT THIS EVER TOUCHING THE LAST NUMBER?
+
+
+function merge(left, right) {
+  let merged = []
+
+  while( (left.length > 0) && (right.length > 0)  ) {
+    if (left[0] <= right [0]){
+      merged.push(left.shift())
+    } else {
+      merged.push(right.shift())
+    }
+  }
+  merged = left.concat(merged)
+  merged = merged.concat(right)
+
+  return merged
+}
+
+
+function mergesort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const middle = arr.length / 2;
+
+  const left = arr.slice(0, middle);
+  const right = arr.slice(middle);
+  console.log(left)
+  console.log(right)
+
+  const sortedL = mergesort(left);
+  const sortedR = mergesort(right);
+
+  let merged = merge(sortedL, sortedR);
+  return merged;
+}
