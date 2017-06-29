@@ -50,3 +50,19 @@ function exponent2(base, exp) {
 }
 
 exponent2(5, 3)
+
+
+// #5 fibbonaci(n)
+
+function fibonacci(n) {
+  if (n === 0) { return [] }
+  if (n === 1) { return [0] }
+  if (n === 2) { return [0, 1] }
+
+  let fibs = fibonacci(n-1);
+  let newFib = fibs[n-2] + fibs[n-3] ;
+  fibs.push(newFib)
+  return fibs
+}
+
+fibonacci(9)
