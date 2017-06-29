@@ -26,4 +26,23 @@ Array.prototype.bubbleSort = function() {
 
 sampleArray.bubbleSort()
 
-// #2
+// #2 subStrings
+
+
+const string = "howdy"
+
+String.prototype.subStrings = function() {
+  let result = [];
+  let str = this;
+
+  for (let i = 0; i < str.length; i++ ) {
+    for (let j = 0; j <= str.length; j++ )
+    if (i < j ) {
+      result.push(str.slice(i,j))
+    }
+  }
+  return result
+}
+
+
+string.subStrings()
