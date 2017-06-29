@@ -26,3 +26,21 @@ Array.prototype.twoSum = function() {
   }
   return result
 }
+
+// #3 transpose
+
+Array.prototype.transpose = function() {
+  let arr = this;
+  const result = [];
+  for (i = 0; i < arr.length; i++) {
+      let row = arr[i]
+      for (j = 0; j < row.length; j++) {
+        let column = j
+        if (j === 0) {
+          result.push([])
+        }
+        result[i].push(arr[j][i])
+    }
+  }
+  return result
+}
